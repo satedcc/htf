@@ -1,0 +1,397 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style-type: none;
+}
+p {
+  font-size: 14px;
+}
+a,
+a:hover {
+  text-decoration: none;
+}
+
+body {
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: 1300px;
+}
+
+.top {
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.top span {
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.top .search {
+  position: relative;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  display: flex;
+  overflow: hidden;
+}
+
+.top .search input {
+  height: 40px;
+  padding: 0 10px;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  width: 100%;
+}
+
+.top .search button {
+  border: none;
+  padding: 0 20px;
+  background: #f37121;
+  color: white;
+}
+
+.main-menu {
+  padding: 20px 0;
+}
+
+.main-menu .menu {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.main-menu .menu a {
+  margin-right: 40px;
+  color: #444;
+  font-size: 14px;
+  font-weight: 400;
+  transition: 0.5s;
+}
+
+.main-menu .menu a:hover {
+  color: #f37121;
+}
+
+.main-header {
+  position: relative;
+  height: 600px;
+}
+
+.carousel-item {
+  height: 600px;
+}
+
+.carousel-item img {
+  object-fit: cover;
+  background-position: center;
+}
+
+.caption {
+  position: absolute;
+  text-align: center;
+  z-index: 99;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.caption a {
+  background: #f37221e3;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 50px;
+}
+
+.caption a:hover i {
+  transform: translateX(10px);
+}
+
+.caption a i {
+  transition: 0.5s;
+}
+
+.caption h1 {
+  font-weight: 800;
+  font-size: 50px;
+  color: white;
+  text-transform: uppercase;
+}
+
+.caption span {
+  font-size: 23px;
+  color: white;
+}
+
+.form-cari {
+  position: relative;
+  background: white;
+  display: flex;
+  padding: 5px;
+  border-radius: 8px;
+}
+
+.form-cari input {
+  border: none;
+  outline: none;
+  width: 100%;
+  height: 57px;
+  padding-left: 45px;
+  font-size: 18px;
+}
+
+.form-cari button {
+  border: none;
+  outline: none;
+  padding: 0 40px;
+  background: #f05454;
+  border-radius: 4px;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.form-cari i {
+  position: absolute;
+  color: #acacac;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  font-size: 20px;
+}
+
+.destination {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 15px;
+}
+
+.destination-item {
+  position: relative;
+}
+
+.destination-item .card-default {
+  height: 230px;
+  position: relative;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.destination-item .card-default img {
+  object-fit: cover;
+  border-radius: 3px;
+  height: 230px;
+  transition: 0.5s;
+}
+
+.title-transform {
+  background: white;
+  position: absolute;
+  bottom: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  text-align: center;
+  border-radius: 3px;
+  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1);
+  padding: 14px 0;
+  font-family: "Merriweather", serif;
+}
+
+.destination-item .card-default:hover img {
+  transform: scale(1.2);
+}
+
+.descripsi {
+  font-size: 12px;
+}
+
+.descripsi .rating {
+  display: inline-block;
+  background: #f37121;
+  color: white;
+  padding: 2px 4px;
+  border-radius: 2px;
+}
+
+.descripsi ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.descripsi ul li {
+  border-right: 1px solid #ddd;
+  padding-right: 10px;
+}
+
+.descripsi ul li:last-child {
+  border-right: none;
+  padding-right: 10px;
+}
+
+.card img {
+  height: 200px;
+  object-fit: cover;
+}
+
+i.fa-bars {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  i.fa-bars {
+    display: block;
+  }
+
+  .wrapper {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .destination {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 15px;
+    overflow-x: scroll;
+  }
+
+  .destination-item {
+    position: relative;
+    width: 260px;
+  }
+
+  .destination-item .card-default {
+    height: 180px;
+  }
+
+  .title-transform {
+    background: rgba(0, 0, 0, 0.432);
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    text-align: center;
+    border-radius: 3px;
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    font-family: "Merriweather", serif;
+  }
+
+  .title-transform h5 {
+    color: white;
+    font-size: 16px;
+  }
+
+  .caption {
+    width: 90%;
+    height: 100%;
+  }
+
+  .caption .caption-text {
+    position: absolute;
+    bottom: 10px;
+  }
+
+  .caption h1 {
+    font-size: 18px;
+  }
+
+  .caption span {
+    font-size: 18px;
+  }
+
+  .form-cari input {
+    height: 35px;
+    font-size: 16px;
+  }
+
+  .form-cari button {
+    padding: 0 15px;
+    font-size: 16px;
+    font-weight: normal;
+    border-radius: 50px;
+  }
+
+  .form-cari {
+    border-radius: 50px;
+    overflow: hidden;
+  }
+
+  .main-header {
+    margin-top: 50px;
+  }
+
+  .main-header,
+  .carousel-item {
+    position: relative;
+    height: 300px;
+  }
+
+  header {
+    background: #fff;
+    padding: 15px 10px;
+    font-size: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+  }
+
+  header .top-main {
+    position: fixed;
+    left: 0;
+    top: 40px;
+    width: 100%;
+    height: 100vh;
+    z-index: 999;
+    background: #fff;
+    padding: 5px 15px;
+    display: none;
+  }
+
+  header .top-main .main-menu .menu {
+    display: block;
+  }
+
+  header .top-main .main-menu .menu i {
+    width: 30px;
+    color: #f37121;
+  }
+
+  header .top-main .top span {
+    display: block;
+    text-align: left;
+    font-size: 14px;
+  }
+
+  header .top-main .search {
+    margin-top: 20px;
+  }
+
+  header .top-main .main-menu .menu a {
+    padding: 10px 0;
+    display: inline-block;
+    font-weight: normal;
+    font-size: 16px;
+  }
+}
