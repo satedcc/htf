@@ -1,3 +1,6 @@
+<?php
+date_default_timezone_set('Asia/Makassar');
+?>
 <!doctype html>
 <html lang="en">
 
@@ -37,8 +40,13 @@
             </div>
             <div class="main-menu">
                 <div class="wrapper">
-                    <div class="row">
-                        <div class="col-md-12">
+                    <div class="row justify-content-between align-items-center">
+                        <div class="col-md-2">
+                            <a href="" class="logo">
+                                <h1 class="m-0">HEPITRIP<span>FAMILY</span></h1>
+                            </a>
+                        </div>
+                        <div class="col-md-auto">
                             <ul class="menu">
                                 <li><a href=""><i class="far fa-home mr-1"></i> Beranda</a></li>
                                 <li><a href=""><i class="far fa-backpack mr-1"></i> Paket Wisata</a></li>
@@ -53,7 +61,10 @@
                 </div>
             </div>
         </div>
-        <i class="fal fa-bars"></i>
+        <div class="mobile-menu">
+            <i class="fal fa-bars"></i>
+            <h1>HEPITRIPFAMILY</h1>
+        </div>
     </header>
     <div class="main-header">
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -525,13 +536,64 @@
             </div>
         </div>
     </section>
+    <div class="btn-fixed">
+        <div>Punya Pertanyaan ?</div>
+        <div><i class="fab fa-whatsapp"></i></div>
+    </div>
+    <div class="chat-cs">
+        <div class="chat-header">
+            <img src="assets/img/cs.png" alt="">
+            <p>Klik pada CS yang tersedia untuk memulai sesi chat bantuan</p>
+        </div>
+        <div class="chat-step">
+            <a href="" class="chat-body">
+                <img src="assets/img/cs.png" alt="" class="mr-3">
+                <div>
+                    <span>Customer Service</span>
+                    <h6 class="m-0 font-weight-bold">CS Hepitrip</h6>
+                    <small>Online</small>
+                </div>
+            </a>
+        </div>
+        <div class="chat-step">
+            <div class="chat-body-message">
+                <div class="chat-message">
+                    Assalamualaikum, Ada yang bisa kami bantu? <?= date("H:i") ?> <i class="far fa-check-double text-info"></i>
+                </div>
+            </div>
+            <div class="chat-replay">
+                <form action="" method="get" id="form-wa">
+                    <textarea name="pesan" id="pesan" placeholder="Balas pesan ke CS"></textarea>
+                    <button id="kirim-pesan"><i class="far fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
     <script>
         $(document).ready(function() {
             $("i.fa-bars").click(function() {
                 $(".top-main").toggle();
+            });
+            // 
+            $(".btn-fixed").click(function() {
+                $(".chat-cs").slideToggle();
+            });
+            $(".chat-step:first").show();
+            $("body").on("click", ".chat-step", function() {
+                event.preventDefault();
+                $(".chat-step:first").hide();
+                $(".chat-step:eq(1)").fadeIn();
             })
+            // 
+            $("#kirim-pesan").on('click', function(e) {
+                event.preventDefault();
+                var pesan = $("#pesan").val();
+                setTimeout(function() {
+                    window.location.replace("https://api.whatsapp.com/send?phone=6285333389395&text=" + pesan);
+                }, 200);
+            });
         })
     </script>
 </body>
